@@ -224,7 +224,7 @@ button.nav-link {
 .section {
     padding: 6rem 0;
     border-bottom: var(--border);
-    scroll-margin-top: 80px;
+    scroll-margin-top: 68px;
     /* Offset for fixed header */
 }
 

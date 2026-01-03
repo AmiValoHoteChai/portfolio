@@ -55,7 +55,7 @@ const initAntigravity = () => {
         if (targetElement) {
             // Tiny timeout to ensure layout is ready
             setTimeout(() => {
-                lenis.scrollTo(targetElement, { offset: -100, immediate: true });
+                lenis.scrollTo(targetElement, { offset: -68, immediate: true });
             }, 0);
         }
     } else {
@@ -139,7 +139,7 @@ const initAntigravity = () => {
             if (targetId && targetId !== '#') {
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    lenis.scrollTo(targetElement, { offset: -100 });
+                    lenis.scrollTo(targetElement, { offset: -68 });
                 }
             }
         });
@@ -170,7 +170,7 @@ const initAntigravity = () => {
     const revealSections = document.querySelectorAll('.reveal');
     const skillBars = document.querySelectorAll('.skill-progress');
 
-    const revealObserver = new IntersectionObserver((entries, observer) => {
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
@@ -181,14 +181,17 @@ const initAntigravity = () => {
                     const width = bar.getAttribute('data-width');
                     bar.style.width = width;
                 });
+            } else {
+                // Persistent effect: reset on scroll out
+                entry.target.classList.remove('active');
 
-                // Stop observing this element (one-way reveal, no flicker)
-                observer.unobserve(entry.target);
+                const bars = entry.target.querySelectorAll('.skill-progress');
+                bars.forEach(bar => bar.style.width = '0');
             }
         });
     }, {
         threshold: 0.1,
-        rootMargin: '0px 0px -20px 0px'
+        rootMargin: '0px 0px -50px 0px'
     });
 
     revealSections.forEach(section => revealObserver.observe(section));
