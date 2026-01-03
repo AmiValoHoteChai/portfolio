@@ -1,4 +1,4 @@
-# Zunait Hossain Ratul - Portfolio Website
+# Portfolio Website
 
 A modern, **brutalist-design** portfolio website showcasing software engineering projects and skills. Built with clean HTML, CSS, and JavaScript following minimalist design principles and optimized for ultra-smooth performance.
 
