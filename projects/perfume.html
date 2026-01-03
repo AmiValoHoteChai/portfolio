@@ -13,7 +13,8 @@
     <nav class="nav">
         <div class="nav-inner">
             <a href="../index.html" class="nav-logo">← Back</a>
-            <div class="nav-links">
+            <button class="nav-toggle" id="navToggle">MENU</button>
+            <div class="nav-links" id="navLinks">
                 <a href="../index.html#projects" class="nav-link">All Projects</a>
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </div>
@@ -38,21 +39,6 @@
         </div>
     </section>
 
-    <!-- Tech Stack -->
-    <section class="stats">
-        <div class="stat">
-            <div class="stat-number">HTML</div>
-            <div class="stat-label">Structure</div>
-        </div>
-        <div class="stat">
-            <div class="stat-number">CSS</div>
-            <div class="stat-label">Styling</div>
-        </div>
-        <div class="stat">
-            <div class="stat-number">JS</div>
-            <div class="stat-label">Interactivity</div>
-        </div>
-    </section>
 
     <!-- Overview -->
     <section class="section">
@@ -61,6 +47,7 @@
                 <span class="section-number">01</span>
                 <h2 class="section-title">Overview</h2>
             </div>
+
             <p class="about-text">
                 A beautifully designed e-commerce website for a perfume brand, built with vanilla HTML, CSS, and
                 JavaScript to showcase products with elegance and style.
@@ -68,6 +55,35 @@
             <p class="about-text">
                 This project demonstrates proficiency in fundamental web technologies and responsive design principles.
             </p>
+
+            <!-- Tech Stack Grid -->
+            <div
+                style="display: grid; grid-template-columns: repeat(3, 1fr); border: 3px solid var(--black); margin-top: 3rem;">
+                <div style="padding: 2rem; text-align: center; border-right: 3px solid var(--black);">
+                    <div style="font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem;">HTML</div>
+                    <div
+                        style="font-family: 'Space Mono', monospace; font-size: 0.75rem; text-transform: uppercase; color: var(--gray-text);">
+                        Structure</div>
+                </div>
+                <div style="padding: 2rem; text-align: center; border-right: 3px solid var(--black);">
+                    <div style="font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem;">CSS</div>
+                    <div
+                        style="font-family: 'Space Mono', monospace; font-size: 0.75rem; text-transform: uppercase; color: var(--gray-text);">
+                        Styling</div>
+                </div>
+                <div style="padding: 2rem; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem;">JS</div>
+                    <div
+                        style="font-family: 'Space Mono', monospace; font-size: 0.75rem; text-transform: uppercase; color: var(--gray-text);">
+                        Interactivity</div>
+                </div>
+            </div>
+
+            <!-- Screenshot -->
+            <div style="margin-top: 3rem; border: 3px solid var(--black); overflow: hidden;">
+                <img src="https://placehold.co/1200x700/FFFFFF/000000/png?text=Perfume+E-Commerce+Site&font=space-mono"
+                    alt="Perfume Website Screenshot" style="width: 100%; display: block;">
+            </div>
         </div>
     </section>
 
@@ -126,6 +142,8 @@
     <footer class="footer">
         <p class="footer-text">© 2026 Zunait Hossain Ratul</p>
     </footer>
+
+    <script src="../main.js"></script>
 </body>
 
 </html>

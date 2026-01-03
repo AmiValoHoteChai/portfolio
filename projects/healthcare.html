@@ -13,7 +13,8 @@
     <nav class="nav">
         <div class="nav-inner">
             <a href="../index.html" class="nav-logo">← Back</a>
-            <div class="nav-links">
+            <button class="nav-toggle" id="navToggle">MENU</button>
+            <div class="nav-links" id="navLinks">
                 <a href="../index.html#projects" class="nav-link">All Projects</a>
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </div>
@@ -36,22 +37,6 @@
         </div>
     </section>
 
-    <!-- Tech Stack -->
-    <section class="stats">
-        <div class="stat">
-            <div class="stat-number">C</div>
-            <div class="stat-label">Language</div>
-        </div>
-        <div class="stat">
-            <div class="stat-number">File I/O</div>
-            <div class="stat-label">Persistence</div>
-        </div>
-        <div class="stat">
-            <div class="stat-number">CLI</div>
-            <div class="stat-label">Interface</div>
-        </div>
-    </section>
-
     <!-- Overview -->
     <section class="section">
         <div class="container">
@@ -59,6 +44,7 @@
                 <span class="section-number">01</span>
                 <h2 class="section-title">Overview</h2>
             </div>
+
             <p class="about-text">
                 A comprehensive Command Line Interface hospital management system developed in C, designed to handle
                 patient records, appointments, and inventory management.
@@ -66,6 +52,35 @@
             <p class="about-text">
                 Uses structured programming and file-based data persistence to ensure data integrity across sessions.
             </p>
+
+            <!-- Tech Stack Grid -->
+            <div
+                style="display: grid; grid-template-columns: repeat(3, 1fr); border: 3px solid var(--black); margin-top: 3rem;">
+                <div style="padding: 2rem; text-align: center; border-right: 3px solid var(--black);">
+                    <div style="font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem;">C</div>
+                    <div
+                        style="font-family: 'Space Mono', monospace; font-size: 0.75rem; text-transform: uppercase; color: var(--gray-text);">
+                        Language</div>
+                </div>
+                <div style="padding: 2rem; text-align: center; border-right: 3px solid var(--black);">
+                    <div style="font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem;">File I/O</div>
+                    <div
+                        style="font-family: 'Space Mono', monospace; font-size: 0.75rem; text-transform: uppercase; color: var(--gray-text);">
+                        Persistence</div>
+                </div>
+                <div style="padding: 2rem; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem;">CLI</div>
+                    <div
+                        style="font-family: 'Space Mono', monospace; font-size: 0.75rem; text-transform: uppercase; color: var(--gray-text);">
+                        Interface</div>
+                </div>
+            </div>
+
+            <!-- Screenshot -->
+            <div style="margin-top: 3rem; border: 3px solid var(--black); overflow: hidden;">
+                <img src="https://placehold.co/1200x700/000000/FFFFFF/png?text=Hospital+Management+CLI&font=space-mono"
+                    alt="Hospital Management System Screenshot" style="width: 100%; display: block;">
+            </div>
         </div>
     </section>
 
@@ -122,6 +137,8 @@
     <footer class="footer">
         <p class="footer-text">© 2026 Zunait Hossain Ratul</p>
     </footer>
+
+    <script src="../main.js"></script>
 </body>
 
 </html>

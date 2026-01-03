@@ -1,8 +1,8 @@
 // Simple navigation for brutalist design
 class Navigation {
     constructor() {
-        this.nav = document.querySelector('.main-nav');
-        this.mobileToggle = document.getElementById('mobileToggle');
+        this.nav = document.querySelector('.nav');
+        this.mobileToggle = document.getElementById('navToggle');
         this.navLinks = document.getElementById('navLinks');
         this.links = document.querySelectorAll('.nav-link');
 
@@ -14,6 +14,7 @@ class Navigation {
         if (this.mobileToggle) {
             this.mobileToggle.addEventListener('click', () => {
                 this.navLinks.classList.toggle('active');
+                this.mobileToggle.textContent = this.navLinks.classList.contains('active') ? 'CLOSE' : 'MENU';
             });
         }
 
@@ -28,6 +29,7 @@ class Navigation {
                         const offset = target.offsetTop - 60;
                         window.scrollTo({ top: offset, behavior: 'smooth' });
                         this.navLinks.classList.remove('active');
+                        if (this.mobileToggle) this.mobileToggle.textContent = 'MENU';
                     }
                 }
             });

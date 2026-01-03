@@ -13,7 +13,8 @@
     <nav class="nav">
         <div class="nav-inner">
             <a href="../index.html" class="nav-logo">← Back</a>
-            <div class="nav-links">
+            <button class="nav-toggle" id="navToggle">MENU</button>
+            <div class="nav-links" id="navLinks">
                 <a href="../index.html#projects" class="nav-link">All Projects</a>
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </div>
@@ -35,22 +36,6 @@
         </div>
     </section>
 
-    <!-- Tech Stack -->
-    <section class="stats">
-        <div class="stat">
-            <div class="stat-number">React</div>
-            <div class="stat-label">Frontend</div>
-        </div>
-        <div class="stat">
-            <div class="stat-number">Node</div>
-            <div class="stat-label">Backend</div>
-        </div>
-        <div class="stat">
-            <div class="stat-number">Vite</div>
-            <div class="stat-label">Build Tool</div>
-        </div>
-    </section>
-
     <!-- Overview -->
     <section class="section">
         <div class="container">
@@ -58,6 +43,7 @@
                 <span class="section-number">01</span>
                 <h2 class="section-title">Overview</h2>
             </div>
+
             <p class="about-text">
                 A modern web platform designed for competitive programming practice. Users can solve coding challenges
                 and receive real-time feedback on their solutions.
@@ -66,6 +52,35 @@
                 Built with React and Node.js, featuring a clean interface and smooth developer experience powered by
                 Vite.
             </p>
+
+            <!-- Tech Stack Grid -->
+            <div
+                style="display: grid; grid-template-columns: repeat(3, 1fr); border: 3px solid var(--black); margin-top: 3rem;">
+                <div style="padding: 2rem; text-align: center; border-right: 3px solid var(--black);">
+                    <div style="font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem;">React</div>
+                    <div
+                        style="font-family: 'Space Mono', monospace; font-size: 0.75rem; text-transform: uppercase; color: var(--gray-text);">
+                        Frontend</div>
+                </div>
+                <div style="padding: 2rem; text-align: center; border-right: 3px solid var(--black);">
+                    <div style="font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem;">Node</div>
+                    <div
+                        style="font-family: 'Space Mono', monospace; font-size: 0.75rem; text-transform: uppercase; color: var(--gray-text);">
+                        Backend</div>
+                </div>
+                <div style="padding: 2rem; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem;">Vite</div>
+                    <div
+                        style="font-family: 'Space Mono', monospace; font-size: 0.75rem; text-transform: uppercase; color: var(--gray-text);">
+                        Build Tool</div>
+                </div>
+            </div>
+
+            <!-- Screenshot -->
+            <div style="margin-top: 3rem; border: 3px solid var(--black); overflow: hidden;">
+                <img src="https://placehold.co/1200x700/000000/FFFFFF/png?text=Code+Farm+Platform&font=space-mono"
+                    alt="Code Farm Platform Screenshot" style="width: 100%; display: block;">
+            </div>
         </div>
     </section>
 
@@ -121,6 +136,8 @@
     <footer class="footer">
         <p class="footer-text">© 2026 Zunait Hossain Ratul</p>
     </footer>
+
+    <script src="../main.js"></script>
 </body>
 
 </html>

@@ -67,6 +67,22 @@ body {
     height: 100%;
 }
 
+.nav-toggle {
+    display: none;
+    background: none;
+    border: 2px solid var(--black);
+    padding: 0.5rem;
+    cursor: pointer;
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.nav-toggle:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
 .nav-link {
     font-family: 'Space Mono', monospace;
     font-size: 0.85rem;
@@ -168,7 +184,7 @@ body {
 }
 
 .stat {
-    padding: 2.5rem 1.5rem;
+    padding: 2rem;
     text-align: center;
     border-right: var(--border);
 }
@@ -178,7 +194,7 @@ body {
 }
 
 .stat-number {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 900;
     line-height: 1;
     margin-bottom: 0.5rem;
@@ -186,7 +202,7 @@ body {
 
 .stat-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     color: var(--gray-text);
 }
@@ -475,8 +491,34 @@ body {
         border-bottom: var(--border);
     }
 
+    .nav-toggle {
+        display: block;
+    }
+
     .nav-links {
         display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        border-bottom: var(--border);
+        z-index: 99;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-link {
+        border-left: none;
+        border-bottom: 2px solid var(--black);
+        width: 100%;
+    }
+
+    .nav-link:last-child {
+        border-bottom: none;
     }
 
     .nav-logo {
