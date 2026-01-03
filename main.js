@@ -49,6 +49,45 @@ const initAntigravity = () => {
         infinite: false,
     });
 
+    // Theme Toggle Logic
+    const createThemeToggle = () => {
+        const btn = document.createElement('button');
+        btn.className = 'nav-link theme-toggle';
+        btn.textContent = 'THEME: LIGHT';
+
+        // Append to nav links
+        const navLinks = document.getElementById('navLinks');
+        if (navLinks) {
+            navLinks.appendChild(btn);
+        }
+
+        // Check preference
+        const savedTheme = localStorage.getItem('theme');
+
+        const updateTheme = (isDark) => {
+            if (isDark) {
+                document.documentElement.setAttribute('data-theme', 'midnight');
+                btn.textContent = 'THEME: NOIR';
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                btn.textContent = 'THEME: LIGHT';
+            }
+        };
+
+        if (savedTheme === 'midnight') {
+            updateTheme(true);
+        }
+
+        btn.addEventListener('click', () => {
+            const isCurrentlyDark = document.documentElement.getAttribute('data-theme') === 'midnight';
+            const newTheme = !isCurrentlyDark;
+            updateTheme(newTheme);
+            localStorage.setItem('theme', newTheme ? 'midnight' : 'light');
+        });
+    };
+
+    createThemeToggle();
+
     function raf(time) {
         lenis.raf(time);
         requestAnimationFrame(raf);
