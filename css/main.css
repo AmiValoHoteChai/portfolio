@@ -21,10 +21,6 @@
     --gray-text: #a0a0a0;
 }
 
-html {
-    /* REMOVED scroll-behavior: smooth to prevent conflict with Lenis */
-}
-
 body {
     font-family: 'Inter', sans-serif;
     background: var(--white);
@@ -55,7 +51,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -78,6 +74,7 @@ body {
     display: none;
     background: none;
     border: 2px solid var(--black);
+    color: var(--black);
     padding: 0.5rem;
     cursor: pointer;
     font-family: 'Space Mono', monospace;
@@ -497,8 +494,28 @@ button.nav-link {
     }
 
     .project-info {
+        padding: 2rem;
         border-right: none;
         border-bottom: var(--border);
+    }
+
+    .project-action {
+        padding: 0;
+        border: none;
+        width: 100%;
+    }
+
+    .project-link {
+        width: 100%;
+        display: block;
+        border: none;
+        border-bottom: var(--border);
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .project-link:last-child {
+        border-bottom: none;
     }
 
     .skills-grid {
@@ -559,30 +576,60 @@ button.nav-link {
     }
 
     .nav-links {
-        display: none;
+        display: flex;
+        flex-direction: column;
         position: fixed;
         top: 68px;
-        /* Shifted further down as requested */
         left: 0;
         right: 0;
+        bottom: 0;
+        height: calc(100vh - 68px);
+        overflow-y: auto;
         background: var(--white);
-        flex-direction: column;
         border-bottom: var(--border);
         z-index: 99;
+
+        opacity: 0;
+        transform: translateY(-20px);
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     .nav-links.active {
-        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
     }
 
     .nav-link {
         border-left: none;
         border-bottom: 2px solid var(--black);
         width: 100%;
+        flex-shrink: 0;
     }
 
-    .nav-link:last-child {
-        border-bottom: none;
+    /* Fix button.nav-link on mobile */
+    button.nav-link {
+        width: 100%;
+        height: auto;
+        padding: 1rem 2rem;
+        border-left: none;
+        border-bottom: 2px solid var(--black);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    /* Add border above the first link (About) */
+    .nav-link:first-child {
+        border-top: 2px solid var(--black);
+    }
+
+    /* Ensure border below the last link (Theme Toggle) */
+    .nav-link:last-child,
+    button.nav-link:last-child {
+        border-bottom: 2px solid var(--black);
     }
 
     .nav-logo {
@@ -628,46 +675,4 @@ html.lenis body {
 
 .lenis.lenis-scrolling iframe {
     pointer-events: none;
-}
-
-/* Mobile Menu Animation */
-@media (max-width: 900px) {
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 68px;
-        left: 0;
-        right: 0;
-        background: var(--white);
-        border-bottom: var(--border);
-        z-index: 99;
-
-        /* Animation properties */
-        opacity: 0;
-        transform: translateY(-20px);
-        pointer-events: none;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    /* Fix button.nav-link on mobile */
-    button.nav-link {
-        width: 100%;
-        border-left: none;
-        border-bottom: 2px solid var(--black);
-        display: flex;
-        /* Ensure flex behavior */
-        justify-content: flex-start;
-        /* Left align text */
-    }
-
-    button.nav-link:last-child {
-        border-bottom: none;
-    }
-
-    .nav-links.active {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-    }
 }

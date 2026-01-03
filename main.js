@@ -35,7 +35,6 @@ const initAntigravity = () => {
     if (history.scrollRestoration) {
         history.scrollRestoration = 'manual';
     }
-    window.scrollTo(0, 0);
 
     const lenis = new Lenis({
         duration: 1.2,
@@ -49,8 +48,24 @@ const initAntigravity = () => {
         infinite: false,
     });
 
+    // Handle Initial Hash Scroll
+    if (window.location.hash) {
+        // If there's a hash, scroll to it smoothly
+        const targetElement = document.querySelector(window.location.hash);
+        if (targetElement) {
+            // Tiny timeout to ensure layout is ready
+            setTimeout(() => {
+                lenis.scrollTo(targetElement, { offset: -100, immediate: true });
+            }, 0);
+        }
+    } else {
+        // Otherwise, force top
+        window.scrollTo(0, 0);
+    }
+
     // Theme Toggle Logic
     const createThemeToggle = () => {
+        // ... (rest of theme toggle logic) ...
         const btn = document.createElement('button');
         btn.className = 'nav-link theme-toggle';
         btn.textContent = 'THEME: LIGHT';
@@ -83,6 +98,14 @@ const initAntigravity = () => {
             const newTheme = !isCurrentlyDark;
             updateTheme(newTheme);
             localStorage.setItem('theme', newTheme ? 'midnight' : 'light');
+
+            // Close mobile menu if open
+            const navLinks = document.querySelector('.nav-links');
+            const navToggle = document.querySelector('.nav-toggle');
+            if (navLinks && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                if (navToggle) navToggle.textContent = 'MENU';
+            }
         });
     };
 
@@ -98,6 +121,50 @@ const initAntigravity = () => {
     lenis.on('scroll', (e) => {
         // Can be used for extra scroll-driven effects
     });
+
+    // Handle Anchor Links with Lenis
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Close mobile menu if open
+            const navLinks = document.querySelector('.nav-links');
+            const navToggle = document.querySelector('.nav-toggle');
+            if (navLinks && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                if (navToggle) navToggle.textContent = 'MENU';
+            }
+
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId !== '#') {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    lenis.scrollTo(targetElement, { offset: -100 });
+                }
+            }
+        });
+    });
+
+    // Handle Logo Click (Scroll to Top if on same page)
+    const logoLink = document.querySelector('.nav-logo');
+    if (logoLink) {
+        logoLink.addEventListener('click', (e) => {
+            // Close mobile menu if open
+            const navLinks = document.querySelector('.nav-links');
+            const navToggle = document.querySelector('.nav-toggle');
+            if (navLinks && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                if (navToggle) navToggle.textContent = 'MENU';
+            }
+
+            // Check if we are on the page the logo points to
+            // Using href vs location.href comparison
+            if (logoLink.href === window.location.href.split('#')[0]) {
+                e.preventDefault();
+                lenis.scrollTo(0); // Scroll to top
+            }
+        });
+    }
 
     // 2. Global Reveal Animations
     const revealSections = document.querySelectorAll('.reveal');
@@ -123,8 +190,8 @@ const initAntigravity = () => {
             }
         });
     }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.1,
+        rootMargin: '0px 0px -20px 0px'
     });
 
     revealSections.forEach(section => revealObserver.observe(section));
