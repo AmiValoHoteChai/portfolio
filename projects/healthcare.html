@@ -22,7 +22,7 @@
     </nav>
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero reveal">
         <div class="container">
             <div class="hero-content">
                 <p class="hero-label">System Programming</p>
@@ -38,7 +38,7 @@
     </section>
 
     <!-- Overview -->
-    <section class="section">
+    <section class="section reveal">
         <div class="container">
             <div class="section-header">
                 <span class="section-number">01</span>
@@ -56,15 +56,15 @@
 
             <!-- Tech Stack Grid -->
             <div class="stats">
-                <div class="stat">
+                <div class="stat reveal">
                     <div class="stat-number">C</div>
                     <div class="stat-label">Language</div>
                 </div>
-                <div class="stat">
+                <div class="stat reveal">
                     <div class="stat-number">File I/O</div>
                     <div class="stat-label">Persistence</div>
                 </div>
-                <div class="stat">
+                <div class="stat reveal">
                     <div class="stat-number">CLI</div>
                     <div class="stat-label">Interface</div>
                 </div>
@@ -73,7 +73,7 @@
     </section>
 
     <!-- Interface Design -->
-    <section class="section">
+    <section class="section reveal">
         <div class="container">
             <div class="section-header">
                 <span class="section-number">02</span>
@@ -86,7 +86,7 @@
 
             <div class="skills-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
                 <!-- card 1 -->
-                <div class="skill-card" style="padding: 0; display: flex; flex-direction: column;">
+                <div class="skill-card reveal" style="padding: 0; display: flex; flex-direction: column;">
                     <div
                         style="background: var(--black); color: var(--white); padding: 0.5rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; border-bottom: var(--border);">
                         Main Menu
@@ -100,7 +100,7 @@
                     </div>
                 </div>
                 <!-- card 2 -->
-                <div class="skill-card" style="padding: 0; display: flex; flex-direction: column;">
+                <div class="skill-card reveal" style="padding: 0; display: flex; flex-direction: column;">
                     <div
                         style="background: var(--black); color: var(--white); padding: 0.5rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; border-bottom: var(--border);">
                         Admin Portal
@@ -114,7 +114,7 @@
                     </div>
                 </div>
                 <!-- card 3 -->
-                <div class="skill-card" style="padding: 0; display: flex; flex-direction: column;">
+                <div class="skill-card reveal" style="padding: 0; display: flex; flex-direction: column;">
                     <div
                         style="background: var(--black); color: var(--white); padding: 0.5rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; border-bottom: var(--border);">
                         CLI Usage
@@ -132,34 +132,34 @@
     </section>
 
     <!-- Features -->
-    <section class="section">
+    <section class="section reveal">
         <div class="container">
             <div class="section-header">
                 <span class="section-number">03</span>
                 <h2 class="section-title">Features</h2>
             </div>
             <div class="skills-grid">
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <div class="skill-name">Authentication</div>
                     <div class="skill-level">Role-based access (Admin, Doctor, Receptionist)</div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <div class="skill-name">Patient Management</div>
                     <div class="skill-level">Add, view, search, update, delete patients</div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <div class="skill-name">Doctor Management</div>
                     <div class="skill-level">Add, view, search, update, delete doctors</div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <div class="skill-name">Data Persistence</div>
                     <div class="skill-level">Storing and retrieving data using persistent .dat files</div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <div class="skill-name">CLI Interface</div>
                     <div class="skill-level">Fast, intuitive terminal navigation</div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <div class="skill-name">User Portal</div>
                     <div class="skill-level">Specific dashboards for each user role</div>
                 </div>
@@ -168,7 +168,7 @@
     </section>
 
     <!-- Links -->
-    <section class="contact">
+    <section class="contact reveal">
         <div class="container">
             <h2 class="contact-title">View Project</h2>
             <p class="contact-desc">Explore the source code on GitHub.</p>
@@ -185,6 +185,8 @@
         <p class="footer-text">© 2026 Zunait Hossain Ratul</p>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     <script src="../main.js"></script>
 </body>
 

@@ -22,7 +22,7 @@
     </nav>
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero reveal">
         <div class="container">
             <div class="hero-content">
                 <p class="hero-label">Web Application</p>
@@ -37,7 +37,7 @@
     </section>
 
     <!-- Overview -->
-    <section class="section">
+    <section class="section reveal">
         <div class="container">
             <div class="section-header">
                 <span class="section-number">01</span>
@@ -55,15 +55,15 @@
 
             <!-- Tech Stack Grid -->
             <div class="stats">
-                <div class="stat">
+                <div class="stat reveal">
                     <div class="stat-number">React</div>
                     <div class="stat-label">Frontend</div>
                 </div>
-                <div class="stat">
+                <div class="stat reveal">
                     <div class="stat-number">Node</div>
                     <div class="stat-label">Backend</div>
                 </div>
-                <div class="stat">
+                <div class="stat reveal">
                     <div class="stat-number">Vite</div>
                     <div class="stat-label">Build Tool</div>
                 </div>
@@ -77,35 +77,63 @@
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="section">
+
+    <!-- Interface Design -->
+    <section class="section reveal">
         <div class="container">
             <div class="section-header">
                 <span class="section-number">02</span>
+                <h2 class="section-title">Interface Design</h2>
+            </div>
+
+            <div class="skills-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <!-- Main Interface -->
+                <div class="skill-card reveal" style="padding: 0; display: flex; flex-direction: column;">
+                    <div
+                        style="background: var(--black); color: var(--white); padding: 0.5rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; border-bottom: var(--border);">
+                        Code Editor Interface
+                    </div>
+                    <div
+                        style="padding: 1rem; background: var(--white); flex-grow: 1; display: flex; align-items: center;">
+                        <div style="border: 2px solid var(--black); background: #1e1e1e; padding: 4px; width: 100%;">
+                            <img src="https://placehold.co/600x400/1e1e1e/00ff00/png?text=Code+Editor&font=space-mono"
+                                alt="Code Farm Interface" style="width: 100%; display: block;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
                 <h2 class="section-title">Features</h2>
             </div>
             <div class="skills-grid">
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <div class="skill-name">Problem Library</div>
                     <div class="skill-level">Curated coding challenges</div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <div class="skill-name">Code Editor</div>
                     <div class="skill-level">Syntax highlighting</div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <div class="skill-name">Real-time Feedback</div>
                     <div class="skill-level">Instant solution testing</div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <div class="skill-name">Modern Stack</div>
                     <div class="skill-level">React + Node.js + Vite</div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <div class="skill-name">Clean UI</div>
                     <div class="skill-level">Intuitive interface</div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <div class="skill-name">Fast Performance</div>
                     <div class="skill-level">Optimized build</div>
                 </div>
@@ -114,7 +142,7 @@
     </section>
 
     <!-- Links -->
-    <section class="contact">
+    <section class="contact reveal">
         <div class="container">
             <h2 class="contact-title">View Project</h2>
             <p class="contact-desc">Explore the source code on GitHub.</p>
@@ -130,6 +158,8 @@
         <p class="footer-text">© 2026 Zunait Hossain Ratul</p>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     <script src="../main.js"></script>
 </body>
 

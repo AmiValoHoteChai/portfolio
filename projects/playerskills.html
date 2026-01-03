@@ -22,7 +22,7 @@
     </nav>
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero reveal">
         <div class="container">
             <div class="hero-content">
                 <p class="hero-label">Minecraft Development</p>
@@ -40,7 +40,7 @@
     </section>
 
     <!-- Overview -->
-    <section class="section">
+    <section class="section reveal">
         <div class="container">
             <div class="section-header">
                 <span class="section-number">01</span>
@@ -53,54 +53,121 @@
                 unique abilities and bonuses as they level up.
             </p>
             <p class="about-text">
-                Built with a focus on performance and highly configurable settings, allowing server owners to tailor the
-                experience to their specific needs.
+                <strong>The Inspiration:</strong> This plugin isn't just a new idea—it's a revitalization. I used to
+                play a Minecraft plugin years ago that featured a similar system, but the original developer stopped
+                supporting it and it was eventually lost to time. I took that inspiration and rebuilt it from the ground
+                up for modern Minecraft versions, ensuring a legacy of progression continues.
             </p>
 
             <!-- Tech Stack Grid -->
             <div class="stats">
-                <div class="stat">
+                <div class="stat reveal">
                     <div class="stat-number">Java</div>
                     <div class="stat-label">Core Language</div>
                 </div>
-                <div class="stat">
+                <div class="stat reveal">
                     <div class="stat-number">Spigot</div>
                     <div class="stat-label">Server API</div>
                 </div>
-                <div class="stat">
+                <div class="stat reveal">
                     <div class="stat-number">YAML</div>
                     <div class="stat-label">Configuration</div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Screenshot placeholder -->
-            <div style="margin-top: 3rem; border: 3px solid var(--black); overflow: hidden;">
-                <img src="https://placehold.co/1200x700/000000/FFFFFF/png?text=Minecraft+Skill+System+GUI&font=space-mono"
-                    alt="Player Skills Reborn Screenshot" style="width: 100%; display: block;">
+    <!-- Interface Design -->
+    <section class="section reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Interface Design</h2>
+            </div>
+
+            <div class="skills-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <!-- Main GUI -->
+                <div class="skill-card reveal" style="padding: 0; display: flex; flex-direction: column;">
+                    <div
+                        style="background: var(--black); color: var(--white); padding: 0.5rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; border-bottom: var(--border);">
+                        Skills Menu
+                    </div>
+                    <div
+                        style="padding: 1rem; background: var(--white); flex-grow: 1; display: flex; align-items: center;">
+                        <div style="border: 2px solid var(--black); background: #000; padding: 4px; width: 100%;">
+                            <img src="../assets/screenshots/playerskills/playerskills_gui.png"
+                                alt="Player Skills Main GUI" style="width: 100%; display: block;">
+                        </div>
+                    </div>
+                </div>
+                <!-- Archery Skill -->
+                <div class="skill-card reveal" style="padding: 0; display: flex; flex-direction: column;">
+                    <div
+                        style="background: var(--black); color: var(--white); padding: 0.5rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; border-bottom: var(--border);">
+                        Skill Details
+                    </div>
+                    <div
+                        style="padding: 1rem; background: var(--white); flex-grow: 1; display: flex; align-items: center;">
+                        <div style="border: 2px solid var(--black); background: #000; padding: 4px; width: 100%;">
+                            <img src="../assets/screenshots/playerskills/playerskills_archery.png"
+                                alt="Archery Skill Details" style="width: 100%; display: block;">
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill Books -->
+                <div class="skill-card reveal" style="padding: 0; display: flex; flex-direction: column;">
+                    <div
+                        style="background: var(--black); color: var(--white); padding: 0.5rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; border-bottom: var(--border);">
+                        Skill Books System
+                    </div>
+                    <div
+                        style="padding: 1rem; background: var(--white); flex-grow: 1; display: flex; align-items: center;">
+                        <div style="border: 2px solid var(--black); background: #000; padding: 4px; width: 100%;">
+                            <img src="../assets/screenshots/playerskills/playerskills_books.png"
+                                alt="Skill Books System" style="width: 100%; display: block;">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Features -->
-    <section class="section">
+    <section class="section reveal">
         <div class="container">
             <div class="section-header">
-                <span class="section-number">02</span>
+                <span class="section-number">03</span>
                 <h2 class="section-title">Key Features</h2>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3 class="feature-title">Dynamic Progression</h3>
-                    <p>Level up various skills through gameplay actions with custom XP calculation formulas.</p>
+            <div class="skills-grid">
+                <div class="skill-card reveal">
+                    <div class="skill-name">Dynamic Progression</div>
+                    <div class="skill-level">Level up various skills through gameplay actions with custom XP calculation
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <h3 class="feature-title">Intuitive GUI</h3>
-                    <p>Easy-to-use in-game menus for players to track their progress and unlocked abilities.</p>
+                <div class="skill-card reveal">
+                    <div class="skill-name">Intuitive GUI</div>
+                    <div class="skill-level">Easy-to-use in-game menus for players to track their progress</div>
                 </div>
-                <div class="feature-card">
-                    <h3 class="feature-title">Highly Configurable</h3>
-                    <p>Every aspect of the plugin can be modified via YAML files to fit any server type.</p>
+                <div class="skill-card reveal">
+                    <div class="skill-name">Highly Configurable</div>
+                    <div class="skill-level">Every aspect can be modified via YAML files to fit any server type</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- View Project (Contact Section) -->
+    <section id="contact" class="contact reveal">
+        <div class="container">
+            <h2 class="contact-title">View Project</h2>
+            <p class="contact-desc">Download the plugin or explore the source code on GitHub.</p>
+            <div class="contact-links">
+                <a href="../assets/plugins/PlayerSkillsReborn-1.0-SNAPSHOT.jar" download class="contact-link">Download
+                    Plugin</a>
+                <a href="https://github.com/AmiValoHoteChai/PlayerSkillsRebornAgain" target="_blank"
+                    class="contact-link">GitHub</a>
+                <a href="../index.html#projects" class="contact-link">More Projects</a>
             </div>
         </div>
     </section>
@@ -110,6 +177,8 @@
         <p class="footer-text">© 2026 Zunait Hossain Ratul</p>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     <script src="../main.js"></script>
 </body>
 
