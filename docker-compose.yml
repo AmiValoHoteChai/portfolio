@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  portfolio:
+    build: .
+    container_name: zunait-portfolio
+    restart: unless-stopped
+    ports:
+      - "8080:80"  # Change 8080 to any available port
+    networks:
+      - web
+
+networks:
+  web:
+    external: true  # Use your existing network (e.g., for Nginx Proxy Manager)
