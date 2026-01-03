@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Management System | Zunait Hossain Ratul</title>
+    <title>Healthcare Management System | Zunait Hossain Ratul</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -26,9 +26,9 @@
         <div class="container">
             <div class="hero-content">
                 <p class="hero-label">System Programming</p>
-                <h1 class="hero-title">Hospital Management System</h1>
-                <p class="hero-desc">Comprehensive CLI-based hospital management system built in C with file-based
-                    persistence.</p>
+                <h1 class="hero-title">Healthcare Management System</h1>
+                <p class="hero-desc">A console-based Hospital Management System built in C with a user-friendly
+                    interface.</p>
                 <div class="hero-buttons">
                     <a href="https://github.com/AmiValoHoteChai/Hospital-Management-System" target="_blank"
                         class="btn btn-primary">GitHub →</a>
@@ -46,40 +46,87 @@
             </div>
 
             <p class="about-text">
-                A comprehensive Command Line Interface hospital management system developed in C, designed to handle
-                patient records, appointments, and inventory management.
+                Healthcare Management System is a comprehensive terminal-based application developed in C, designed to
+                streamline hospital operations with a clean and intuitive CLI interface.
             </p>
             <p class="about-text">
-                Uses structured programming and file-based data persistence to ensure data integrity across sessions.
+                The system prioritizes security and organization through role-based access control, allowing different
+                levels of management for Admins, Doctors, and Receptionists.
             </p>
 
             <!-- Tech Stack Grid -->
-            <div
-                style="display: grid; grid-template-columns: repeat(3, 1fr); border: 3px solid var(--black); margin-top: 3rem;">
-                <div style="padding: 2rem; text-align: center; border-right: 3px solid var(--black);">
-                    <div style="font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem;">C</div>
-                    <div
-                        style="font-family: 'Space Mono', monospace; font-size: 0.75rem; text-transform: uppercase; color: var(--gray-text);">
-                        Language</div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">C</div>
+                    <div class="stat-label">Language</div>
                 </div>
-                <div style="padding: 2rem; text-align: center; border-right: 3px solid var(--black);">
-                    <div style="font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem;">File I/O</div>
-                    <div
-                        style="font-family: 'Space Mono', monospace; font-size: 0.75rem; text-transform: uppercase; color: var(--gray-text);">
-                        Persistence</div>
+                <div class="stat">
+                    <div class="stat-number">File I/O</div>
+                    <div class="stat-label">Persistence</div>
                 </div>
-                <div style="padding: 2rem; text-align: center;">
-                    <div style="font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem;">CLI</div>
-                    <div
-                        style="font-family: 'Space Mono', monospace; font-size: 0.75rem; text-transform: uppercase; color: var(--gray-text);">
-                        Interface</div>
+                <div class="stat">
+                    <div class="stat-number">CLI</div>
+                    <div class="stat-label">Interface</div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Screenshot -->
-            <div style="margin-top: 3rem; border: 3px solid var(--black); overflow: hidden;">
-                <img src="https://placehold.co/1200x700/000000/FFFFFF/png?text=Hospital+Management+CLI&font=space-mono"
-                    alt="Hospital Management System Screenshot" style="width: 100%; display: block;">
+    <!-- Interface Design -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Interface Design</h2>
+            </div>
+            <p class="about-text" style="margin-bottom: 2rem;">
+                The system features a custom-built ASCII art interface with color-coded console output for enhanced
+                readability.
+            </p>
+
+            <div class="skills-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <!-- card 1 -->
+                <div class="skill-card" style="padding: 0; display: flex; flex-direction: column;">
+                    <div
+                        style="background: var(--black); color: var(--white); padding: 0.5rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; border-bottom: var(--border);">
+                        Main Menu
+                    </div>
+                    <div
+                        style="padding: 1rem; background: var(--white); flex-grow: 1; display: flex; align-items: center;">
+                        <div style="border: 2px solid var(--black); background: #000; padding: 4px; width: 100%;">
+                            <img src="../assets/screenshots/hms/main_menu.png" alt="HMS Main Menu"
+                                style="width: 100%; display: block;">
+                        </div>
+                    </div>
+                </div>
+                <!-- card 2 -->
+                <div class="skill-card" style="padding: 0; display: flex; flex-direction: column;">
+                    <div
+                        style="background: var(--black); color: var(--white); padding: 0.5rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; border-bottom: var(--border);">
+                        Admin Portal
+                    </div>
+                    <div
+                        style="padding: 1rem; background: var(--white); flex-grow: 1; display: flex; align-items: center;">
+                        <div style="border: 2px solid var(--black); background: #000; padding: 4px; width: 100%;">
+                            <img src="../assets/screenshots/hms/admin_portal.png" alt="HMS Admin Portal"
+                                style="width: 100%; display: block;">
+                        </div>
+                    </div>
+                </div>
+                <!-- card 3 -->
+                <div class="skill-card" style="padding: 0; display: flex; flex-direction: column;">
+                    <div
+                        style="background: var(--black); color: var(--white); padding: 0.5rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; border-bottom: var(--border);">
+                        CLI Usage
+                    </div>
+                    <div
+                        style="padding: 1rem; background: var(--white); flex-grow: 1; display: flex; align-items: center;">
+                        <div style="border: 2px solid var(--black); background: #000; padding: 4px; width: 100%;">
+                            <img src="../assets/screenshots/hms/cli_usage.png" alt="HMS CLI Usage"
+                                style="width: 100%; display: block;">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -88,33 +135,33 @@
     <section class="section">
         <div class="container">
             <div class="section-header">
-                <span class="section-number">02</span>
+                <span class="section-number">03</span>
                 <h2 class="section-title">Features</h2>
             </div>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <div class="skill-name">Patient Records</div>
-                    <div class="skill-level">Add, update, search patients</div>
+                    <div class="skill-name">Authentication</div>
+                    <div class="skill-level">Role-based access (Admin, Doctor, Receptionist)</div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-name">Appointments</div>
-                    <div class="skill-level">Schedule & manage bookings</div>
+                    <div class="skill-name">Patient Management</div>
+                    <div class="skill-level">Add, view, search, update, delete patients</div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-name">Inventory</div>
-                    <div class="skill-level">Track medical supplies</div>
+                    <div class="skill-name">Doctor Management</div>
+                    <div class="skill-level">Add, view, search, update, delete doctors</div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-name">File Persistence</div>
-                    <div class="skill-level">Data saved across sessions</div>
+                    <div class="skill-name">Data Persistence</div>
+                    <div class="skill-level">Storing and retrieving data using persistent .dat files</div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-name">Structs & Pointers</div>
-                    <div class="skill-level">Efficient memory management</div>
+                    <div class="skill-name">CLI Interface</div>
+                    <div class="skill-level">Fast, intuitive terminal navigation</div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-name">Menu System</div>
-                    <div class="skill-level">Intuitive CLI navigation</div>
+                    <div class="skill-name">User Portal</div>
+                    <div class="skill-level">Specific dashboards for each user role</div>
                 </div>
             </div>
         </div>

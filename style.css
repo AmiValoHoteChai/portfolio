@@ -141,7 +141,7 @@ body {
 
 .hero-buttons {
     display: flex;
-    gap: 0;
+    gap: 1.5rem;
 }
 
 .btn {
@@ -167,11 +167,11 @@ body {
 .btn-secondary {
     background: var(--white);
     color: var(--black);
-    border-left: none;
 }
 
 .btn-secondary:hover {
-    background: var(--gray);
+    background: var(--black);
+    color: var(--white);
 }
 
 /* Stats */
@@ -211,6 +211,8 @@ body {
 .section {
     padding: 6rem 0;
     border-bottom: var(--border);
+    scroll-margin-top: 80px;
+    /* Offset for fixed header */
 }
 
 .section-header {
@@ -244,27 +246,15 @@ body {
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    border: var(--border);
+    gap: 1.5rem;
+    box-sizing: border-box;
 }
 
 .skill-card {
     padding: 2rem;
-    border-bottom: var(--border);
-    border-right: var(--border);
-}
-
-.skill-card:nth-child(3n) {
-    border-right: none;
-}
-
-.skill-card:nth-last-child(-n+3) {
-    border-bottom: none;
-}
-
-/* Fix for 2-item last row */
-.skill-card:nth-last-child(1):nth-child(3n+1),
-.skill-card:nth-last-child(2):nth-child(3n+1)~.skill-card {
-    border-bottom: none;
+    border: var(--border);
+    box-sizing: border-box;
+    background: var(--white);
 }
 
 .skill-name {
@@ -294,27 +284,43 @@ body {
 }
 
 /* Projects */
-.project {
-    border: var(--border);
-    border-bottom: none;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
-.project:last-child {
-    border-bottom: var(--border);
+.project {
+    border: var(--border);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background: var(--white);
 }
+
 
 .project-info {
     padding: 3rem;
     border-right: var(--border);
 }
 
+.project-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-number {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--gray-text);
+}
+
 .project-title {
     font-size: 1.75rem;
     font-weight: 900;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
 }
 
 .project-desc {
@@ -430,16 +436,32 @@ body {
     color: var(--gray-text);
 }
 
-/* Responsive */
+/* Tablet Responsive (2-column skills) */
+@media (max-width: 1024px) and (min-width: 901px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+}
+
+/* Mobile Responsive */
 @media (max-width: 900px) {
     .container {
         padding: 0 1rem;
+        overflow: visible;
+    }
+
+    .section {
+        padding: 4rem 0;
+        scroll-margin-top: 68px;
+        /* Offset for mobile header */
     }
 
     .stats {
         grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 2rem auto;
+        max-width: none;
+        margin: 2rem 0;
+        box-sizing: border-box;
     }
 
     .stat {
@@ -449,6 +471,10 @@ body {
 
     .stat:not(:last-child) {
         border-bottom: var(--border);
+    }
+
+    .projects-list {
+        gap: 2rem;
     }
 
     .project {
@@ -462,16 +488,34 @@ body {
 
     .skills-grid {
         grid-template-columns: 1fr;
-        border: none;
+        gap: 1rem;
     }
 
     .skill-card {
+        padding: 1.5rem;
         border: var(--border);
-        border-bottom: none;
     }
 
-    .skill-card:last-child {
-        border-bottom: var(--border);
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 0.75rem;
+        margin-top: 1rem;
+    }
+
+    .btn {
+        padding: 1rem 2rem;
+        font-size: 0.85rem;
+        text-align: center;
+        width: 240px;
+        /* Refined width for perfect balance */
+        max-width: 90%;
+        box-sizing: border-box;
+    }
+
+    .btn-secondary {
+        border: var(--border);
     }
 
     .contact-links {
@@ -495,10 +539,15 @@ body {
         display: block;
     }
 
+    .nav-inner {
+        padding: 1rem;
+    }
+
     .nav-links {
         display: none;
         position: fixed;
-        top: 60px;
+        top: 68px;
+        /* Shifted further down as requested */
         left: 0;
         right: 0;
         background: var(--white);
