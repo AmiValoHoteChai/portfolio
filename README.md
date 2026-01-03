@@ -1,21 +1,23 @@
 # Zunait Hossain Ratul - Portfolio Website
 
-A modern, brutalist-design portfolio website showcasing software engineering projects and skills. Built with clean HTML, CSS, and JavaScript following minimalist design principles.
+A modern, **brutalist-design** portfolio website showcasing software engineering projects and skills. Built with clean HTML, CSS, and JavaScript following minimalist design principles and optimized for ultra-smooth performance.
 
-## 🎨 Design Philosophy
+## 🎨 Design Philosophy & "Antigravity"
 
-This portfolio embraces **brutalist web design** with:
-- **Monochrome Color Scheme**: Pure black, white, and gray palette
-- **Typography**: Space Mono (monospace) and Inter (sans-serif)
-- **Hard Borders**: 3px solid black borders throughout
-- **No Gradients**: Except for subtle effects in the 404 page
-- **Grid-Based Layout**: Structured, geometric sections
-- **Minimal Animations**: Smooth, purposeful transitions only
+This portfolio embraces **Brutalist Web Design** mixed with high-performance motion:
+
+- **Smooth Scrolling**: A custom smooth-scroll implementation using **Lenis** that makes the site feel weightless.
+- **Micro-Interactions**: Elements reveal themselves with a snappy 0.4s ease-out animation as you scroll.
+- **Monochrome Palette**: Pure black, white, and gray (#f5f5f5) for high contrast and readability.
+- **Hard Borders**: 3px solid black borders define the structural grid.
+- **Typography**: `Space Mono` for technical data, `Inter` for clean readability.
+- **Modular CSS**: Architecture refactored for maximum scalability and easy maintenance.
 
 ## 🚀 Quick Start
 
 ### Local Development
-Simply open `index.html` in your browser. No build process required.
+1. Clone the repository
+2. Open `index.html` in your browser. No build process required.
 
 ### Docker Deployment
 See [DEPLOYMENT.md](DEPLOYMENT.md) for complete deployment instructions using Docker, Portainer, and Nginx Proxy Manager.
@@ -24,196 +26,76 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for complete deployment instructions using Do
 
 ```
 personal-site/
-├── index.html              # Main portfolio page
-├── style.css               # Brutalist design system
-├── main.js                 # Navigation & interactions
-├── 404.html                # Custom error page with glitch effects
-├── projects/               # Project detail pages
-│   ├── healthcare.html     # Hospital Management System
-│   ├── codefarm.html       # Code Farm platform
-│   └── perfume.html        # Perfume E-Commerce site
-├── assets/                 # Static assets (currently empty)
-├── Dockerfile              # Docker configuration
-├── docker-compose.yml      # Docker Compose setup
-├── nginx.conf              # Nginx web server config
-├── DEPLOYMENT.md           # Deployment guide
-└── FIXES_REPORT.md         # Bug fixes documentation
+├── css/                        # New Modular CSS Architecture
+│   ├── main.css                # Global styles, variables, & resets
+│   ├── components/             # Reusable components (buttons, cards)
+│   │   └── screenshot-card.css # Terminal-style window component
+│   └── projects/               # Project-specific stylesheets
+│       ├── playerskills.css
+│       ├── perfume.css
+│       ├── healthcare.css
+│       └── codefarm.css
+├── js/
+│   └── main.js                 # Lenis setup, Scroll Observers, Navigation
+├── assets/                     # Images, PDFs, and media
+├── projects/                   # Project detail pages
+│   ├── playerskills.html       # Player Skills Plugin
+│   ├── healthcare.html         # Hospital Management System
+│   ├── perfume.html            # Perfume E-Commerce
+│   └── codefarm.html           # Code Farm Platform
+├── index.html                  # Main homepage
+└── 404.html                    # Custom glitch-effect error page
 ```
 
-## ✨ Features
+## ✨ New Features
 
-### Design & UX
-- **Fully Responsive** - Mobile-first design, works on all devices
-- **Brutalist Aesthetic** - Bold, minimalist, functional design
-- **Smooth Navigation** - Fixed navbar with smooth scroll
-- **Progress Bars** - Visual skill level indicators
-- **Custom 404 Page** - Glitch effects and particle animations
+### 🌊 Smooth Scroll (Lenis)
+We integrated **Lenis**, a standardized smooth scrolling library used by award-winning websites.
+- **Why?** Native browser scrolling can feel "heavy." Lenis runs on the main thread but adds momentum and interpolation for a "gliding" feel.
+- **Performance**: Optimized for 60fps+ with `translate3d` hardware acceleration.
 
-### Technical
-- **Pure HTML/CSS/JS** - No frameworks or dependencies
-- **SEO Optimized** - Proper meta tags and semantic HTML
-- **Performance** - Fast loading with optimized assets
-- **Docker Ready** - Easy deployment with Docker + Nginx
-- **Accessible** - Semantic HTML and keyboard navigation
+### 🧱 Modular CSS Architecture
+The codebase has been refactored from a single `style.css` into a scalable architecture:
+- **Components**: Reusable UI elements (like the terminal-style screenshot windows) live in `css/components/`.
+- **Project Isolation**: Each project page has its own dedicated CSS file in `css/projects/`, preventing style conflicts.
+- **Maintainability**: Easier to upgrade specific parts of the site without breaking others.
 
-### Sections
-1. **Hero** - Introduction with CTA buttons
-2. **About** - Background and achievements
-3. **Stats** - CGPA, Beecrowd ranking, problems solved
-4. **Skills** - 6 skills with progress bars
-5. **Projects** - 3 featured projects with detail pages
-6. **Contact** - Email, GitHub, and resume links
-
-## 🛠️ Technologies
-
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-- **Fonts**: Google Fonts (Inter, Space Mono)
-- **Icons**: Lucide Icons (404 page only)
-- **Server**: Nginx (Alpine Linux)
-- **Containerization**: Docker & Docker Compose
-- **Deployment**: Portainer + Nginx Proxy Manager
-
-## 📝 Customization Guide
-
-### Update Personal Information
-
-**Contact Details** (index.html, line 201):
-```html
-<a href="mailto:zunaitratul@gmail.com" class="contact-link">Email</a>
-```
-
-**GitHub Username** (multiple locations):
-```html
-<a href="https://github.com/AmiValoHoteChai" target="_blank">GitHub</a>
-```
-
-**Domain/Logo** (index.html, line 16):
-```html
-<a href="#" class="nav-logo">Ratul.qzz.io</a>
-```
-
-### Update Skills
-
-Edit the skills grid in `index.html` (lines 84-126):
-```html
-<div class="skill-card">
-    <div class="skill-name">C</div>
-    <div class="skill-level">Strong — 90%</div>
-    <div class="skill-bar">
-        <div class="skill-progress" style="width: 90%"></div>
-    </div>
-</div>
-```
-
-### Add New Projects
-
-1. Create a new HTML file in `projects/` folder
-2. Copy structure from existing project pages
-3. Add project card to `index.html` in the Projects section
-4. Update links and descriptions
-
-### Add Resume
-
-Place your resume PDF in the `assets/` folder:
-```
-assets/resume.pdf
-```
-
-The download links are already configured in:
-- Hero section (line 36)
-- Contact section (line 203)
+### 📱 Interface Design Standard
+All project pages now feature a **Standardized Interface Design Section**:
+- **Terminal-Style Windows**: Screenshots are presented inside code-editor-like frames.
+- **Consistent Layout**: Overview → Interface Design → Features flow across all pages.
+- **Media-Rich**: Live screenshots for Player Skills, Perfume, and Healthcare projects.
 
 ## 🎯 Featured Projects
 
-### 1. Hospital Management System
-- **Tech**: C, File I/O, Data Structures
-- **Type**: CLI-based system programming
-- **Features**: Patient records, appointments, inventory management
-- [GitHub](https://github.com/AmiValoHoteChai/Hospital-Management-System)
+### 1. Player Skills Reborn Again
+- **Type**: Minecraft Plugin (Java)
+- **Features**: Custom GUI, RPG-style skill systems, Archery mechanics.
+- **Tech**: Java, Spigot API.
 
-### 2. Perfume E-Commerce
-- **Tech**: HTML, CSS, JavaScript
-- **Type**: Responsive website
-- **Features**: Product showcase, smooth animations, modern UI
-- [Live Demo](https://amivalohotechai.github.io/Perfume-Project/) | [GitHub](https://github.com/AmiValoHoteChai/Perfume-Project)
+### 2. Healthcare Management System
+- **Type**: CLI System Programming
+- **Features**: Patient records, Role-based auth, File persistence.
+- **Tech**: C, File I/O, Data Structures.
 
-### 3. Code Farm
-- **Tech**: React, Node.js, Vite
-- **Type**: Web application
-- **Features**: Problem library, code editor, real-time feedback
-- [GitHub](https://github.com/AmiValoHoteChai)
+### 3. Perfume E-Commerce
+- **Type**: Responsive Web Design
+- **Features**: Product gallery, cart logic, brutalist aesthetic.
+- **Tech**: HTML5, CSS3, Vanilla JS.
 
-## 🚢 Deployment
+### 4. Code Farm
+- **Type**: Competitive Programming Platform
+- **Features**: Real-time code execution, problem library.
+- **Tech**: React, Node.js, Vite.
 
-### Prerequisites
-- Ubuntu server with Docker installed
-- Portainer WebUI
-- Nginx Proxy Manager
-- Domain name (optional)
+## 🛠️ Technologies & Stack
 
-### Quick Deploy
-```bash
-# Clone repository
-git clone https://github.com/YOUR_USERNAME/personal-site.git
-cd personal-site
-
-# Build and run with Docker Compose
-docker-compose up -d --build
-```
-
-For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
-
-## 🐛 Bug Fixes & Updates
-
-See [FIXES_REPORT.md](FIXES_REPORT.md) for a list of resolved issues and improvements.
-
-## 📊 Stats & Achievements
-
-- **CGPA**: 3.95/4.00
-- **Beecrowd Ranking**: Top 4%
-- **Problems Solved**: 124+
-- **University**: Daffodil International University
-- **Expected Graduation**: December 2028
-- **Status**: Dean's Award Candidate
-
-## 🔒 Security Features
-
-- ✅ HTTPS ready (via Nginx Proxy Manager)
-- ✅ Gzip compression enabled
-- ✅ Static asset caching
-- ✅ Custom error pages
-- ✅ No sensitive files exposed
-- ✅ Container runs as non-root user
-
-## 📱 Browser Support
-
-- ✅ Chrome/Edge (latest)
-- ✅ Firefox (latest)
-- ✅ Safari (latest)
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 🎨 Color Palette
-
-```css
---black: #000000
---white: #ffffff
---gray: #f5f5f5
---gray-text: #666666
---border: 3px solid var(--black)
-```
+- **Core**: HTML5, CSS3, JavaScript (ES6+)
+- **Libraries**:
+    - [Lucide](https://lucide.dev/) (Icons)
+- **Fonts**: Google Fonts (Inter, Space Mono)
+- **Server**: Nginx (Alpine Linux)
+- **Containerization**: Docker & Docker Compose
 
 ## 📄 License
-
 © 2026 Zunait Hossain Ratul. All rights reserved.
-
----
-
-## 🤝 Connect
-
-- **Email**: zunaitratul@gmail.com
-- **GitHub**: [@AmiValoHoteChai](https://github.com/AmiValoHoteChai)
-- **Portfolio**: [Live Site](https://ratul.qzz.io) *(update with your domain)*
-
----
-
-**Built with ❤️ using brutalist design principles**
