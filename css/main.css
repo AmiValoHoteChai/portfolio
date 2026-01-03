@@ -53,6 +53,8 @@ body {
     padding: 1rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    min-height: 68px;
+    /* Prevent height collapse on mobile scroll */
 }
 
 .nav-logo {
@@ -500,22 +502,23 @@ button.nav-link {
     }
 
     .project-action {
-        padding: 0;
-        border: none;
+        padding: 0 !important;
+        border: none !important;
         width: 100%;
     }
 
     .project-link {
         width: 100%;
         display: block;
-        border: none;
-        border-bottom: var(--border);
+        border: none !important;
+        border-top: none !important;
+        border-bottom: var(--border) !important;
         text-align: center;
         padding: 1.5rem;
     }
 
     .project-link:last-child {
-        border-bottom: none;
+        border-bottom: none !important;
     }
 
     .skills-grid {

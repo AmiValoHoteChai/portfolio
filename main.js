@@ -170,7 +170,7 @@ const initAntigravity = () => {
     const revealSections = document.querySelectorAll('.reveal');
     const skillBars = document.querySelectorAll('.skill-progress');
 
-    const revealObserver = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
@@ -181,12 +181,9 @@ const initAntigravity = () => {
                     const width = bar.getAttribute('data-width');
                     bar.style.width = width;
                 });
-            } else {
-                // Persistent effect: reset on scroll out
-                entry.target.classList.remove('active');
 
-                const bars = entry.target.querySelectorAll('.skill-progress');
-                bars.forEach(bar => bar.style.width = '0');
+                // Stop observing this element (one-way reveal, no flicker)
+                observer.unobserve(entry.target);
             }
         });
     }, {
