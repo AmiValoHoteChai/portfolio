@@ -7,14 +7,8 @@ services:
       - "8080:80"
     volumes:
       - ./public:/usr/share/nginx/html:ro
-    networks:
-      - portfolio-network
     deploy:
       mode: replicated
       replicas: 1
       restart_policy:
         condition: on-failure
-
-networks:
-  portfolio-network:
-    driver: overlay
