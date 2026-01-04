@@ -34,7 +34,7 @@ personal-site/
 │       ├── playerskills.css
 │       ├── perfume.css
 │       ├── healthcare.css
-│       └── codefarm.css
+<!-- │       └── codefarm.css -->
 ├── js/
 │   └── main.js                 # Lenis setup, Scroll Observers, Navigation
 ├── assets/                     # Images, PDFs, and media
@@ -42,7 +42,7 @@ personal-site/
 │   ├── playerskills.html       # Player Skills Plugin
 │   ├── healthcare.html         # Hospital Management System
 │   ├── perfume.html            # Perfume E-Commerce
-│   └── codefarm.html           # Code Farm Platform
+<!-- │   └── codefarm.html           # Code Farm Platform -->
 ├── index.html                  # Main homepage
 └── 404.html                    # Custom glitch-effect error page
 ```
@@ -68,25 +68,27 @@ All project pages now feature a **Standardized Interface Design Section**:
 
 ## 🎯 Featured Projects
 
-### 1. Player Skills Reborn Again
-- **Type**: Minecraft Plugin (Java)
-- **Features**: Custom GUI, RPG-style skill systems, Archery mechanics.
-- **Tech**: Java, Spigot API.
-
-### 2. Healthcare Management System
+### 1. Healthcare Management System
 - **Type**: CLI System Programming
 - **Features**: Patient records, Role-based auth, File persistence.
 - **Tech**: C, File I/O, Data Structures.
 
-### 3. Perfume E-Commerce
+### 2. Perfume E-Commerce
 - **Type**: Responsive Web Design
 - **Features**: Product gallery, cart logic, brutalist aesthetic.
 - **Tech**: HTML5, CSS3, Vanilla JS.
 
+### 3. Player Skills Reborn Again
+- **Type**: Minecraft Plugin (Java)
+- **Features**: Custom GUI, RPG-style skill systems, Archery mechanics.
+- **Tech**: Java, Spigot API.
+
+<!-- 
 ### 4. Code Farm
 - **Type**: Competitive Programming Platform
 - **Features**: Real-time code execution, problem library.
 - **Tech**: React, Node.js, Vite.
+-->
 
 ## 🛠️ Technologies & Stack
 
