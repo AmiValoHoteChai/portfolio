@@ -4,17 +4,10 @@ services:
   portfolio:
     build: .
     image: ratul-portfolio:latest
-    container_name: portfolio-app
     ports:
       - "8080:80"
-    networks:
-      - nginx-proxy-manager_default
     deploy:
       mode: replicated
       replicas: 1
       restart_policy:
         condition: on-failure
-
-networks:
-  nginx-proxy-manager_default:
-    external: true
