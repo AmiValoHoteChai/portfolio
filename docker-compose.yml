@@ -6,7 +6,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./public:/usr/share/nginx/html:ro
+      - /home/ubuntu/personal-site/public:/usr/share/nginx/html:ro
     deploy:
       mode: replicated
       replicas: 1
