@@ -2,11 +2,10 @@ version: '3.8'
 
 services:
   portfolio:
-    image: nginx:alpine
+    build: .
+    image: ratul-portfolio:latest
     ports:
       - "8080:80"
-    volumes:
-      - /home/ubuntu/personal-site/public:/usr/share/nginx/html:ro
     deploy:
       mode: replicated
       replicas: 1
